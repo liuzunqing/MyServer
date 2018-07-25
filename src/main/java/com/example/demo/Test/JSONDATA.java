@@ -13,12 +13,16 @@ public class JSONDATA {
     private  Data temperature;
     private  Data humidity;
     private  Data gas;
+    private  Data latitude; // 经纬度
+    private  Data longitude;
 
-    public JSONDATA(Data wind, Data temperature, Data humidity, Data gas) {
+    public JSONDATA(Data wind, Data temperature, Data humidity, Data gas, Data latitude, Data longitude) {
         this.wind = wind;
         this.temperature = temperature;
         this.humidity = humidity;
         this.gas = gas;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public Data getWind() {
@@ -51,5 +55,21 @@ public class JSONDATA {
 
     public void setGas(Data gas) {
         this.gas = gas;
+    }
+
+    public Data getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Data latitude) {
+        this.latitude = latitude;
+    }
+
+    public Data getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Data longitude) {
+        this.longitude = longitude;
     }
 }

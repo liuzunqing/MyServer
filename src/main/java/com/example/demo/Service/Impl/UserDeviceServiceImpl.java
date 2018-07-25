@@ -8,7 +8,9 @@ import com.example.demo.Service.UserDeviceService;
 import com.example.demo.Utils.DeviceSensorUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.beans.Transient;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -81,11 +83,13 @@ public class UserDeviceServiceImpl implements UserDeviceService{
     }
 
     @Override
+    @Transactional
     public void deleteBydevEUI(String devEUI) {
         userDeviceJpaRepository.deleteByDevEUI(devEUI);
     }
 
     @Override
+    @Transactional
     public UserDevice findBydevEUI(String devEUI) {
         return userDeviceJpaRepository.findUserDeviceByDevEUI(devEUI);
     }

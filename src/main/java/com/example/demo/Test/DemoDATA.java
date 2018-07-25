@@ -14,7 +14,7 @@ import java.util.Calendar;
 public class DemoDATA {
 
     private static  double getRandomData(int left , int right){
-        return Math.random()*left + (right - left);
+        return left + Math.random()*(right - left);
     }
     private static String getNowTime(){
         Calendar calendar = Calendar.getInstance();
@@ -30,7 +30,9 @@ public class DemoDATA {
         Data humidity = new Data(getRandomData(20,40), nowTime);
         Data  gas = new Data(getRandomData(5,10), nowTime);
         Data  temperature =  new Data(getRandomData(25,40), nowTime);
-        JSONDATA jsondata = new JSONDATA(wind, temperature, humidity, gas);
+        Data  longitude = new Data(getRandomData(120,121), nowTime);
+        Data  latitude = new Data(getRandomData(40,42), nowTime);
+        JSONDATA jsondata = new JSONDATA(wind, temperature, humidity, gas,latitude,longitude);
         return JSONObject.toJSONString(jsondata);
     }
 
