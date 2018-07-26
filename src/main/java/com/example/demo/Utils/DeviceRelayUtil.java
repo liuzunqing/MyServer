@@ -6,8 +6,6 @@ import com.example.demo.Entity.RelayType;
 import com.example.demo.Service.DeviceRelayService;
 import com.example.demo.Service.RelaySwitchService;
 import com.example.demo.Service.RelayTypeService;
-import com.sun.org.apache.xerces.internal.xs.datatypes.ObjectList;
-import io.swagger.models.auth.In;
 import org.json.JSONException;
 import org.json.JSONObject;
 

@@ -4,7 +4,7 @@ import com.example.demo.Entity.Data;
 import com.example.demo.Service.DataService;
 import com.example.demo.Service.Impl.RedisServiceImpl;
 import com.example.demo.Service.RedisService;
-import org.springframework.cache.annotation.Cacheable;
+/*import org.springframework.cache.annotation.Cacheable;*/
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

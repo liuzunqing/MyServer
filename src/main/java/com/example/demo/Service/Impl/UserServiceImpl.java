@@ -114,8 +114,7 @@ public class UserServiceImpl implements UserService{
         if (userList == null) return new TMessage(TMessage.CODE_FAILURE, "获取用户信息失败");
         List<HashMap<String, Object>> userTreeInfo = new ArrayList<HashMap<String, Object>>(); //整个用户的树形信息，并且管理员无法查看其他管理员的信息
         userList.forEach(user1->{
-
-            if (!user1.getFlag().equals("admin")){
+            // 可以管理管理员的设备
                 HashMap<String,Object> userNode = new HashMap<>(); // 一个节点的信息
                 userNode.put("id",user1.getUserid());
                 userNode.put("label",user1.getUserid());
@@ -125,7 +124,7 @@ public class UserServiceImpl implements UserService{
                 userNode.put("icon","admin-user");
                 userNode.put("children",new ArrayList<>());
                 userTreeInfo.add(userNode);
-            }
+
         });
         return new TMessage(TMessage.CODE_SUCCESS, "获取信息成功",userTreeInfo);
     }
